@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Délîçe Dàdô | أذواق سطيف الأصيلة</title>
+<style>
+:root{
+  --gold:#D4A373;
+  --gold2:#E9C46A;
+  --dark:#3a2a1a;
+  --bg:#fffdf7;
+  --card:#fff;
+}
+[data-theme="dark"]{
+  --bg:#1a1611;
+  --card:#2a241e;
+  --dark:#f5f0e8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);transition:0.3s}
+
+header{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);padding:80px 20px;text-align:center;color:#fff;position:relative;overflow:hidden}
+header::before{content:"";position:absolute;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.2) 0%,transparent 70%);animation:rotate 20s linear infinite}
+@keyframes rotate{100%{transform:rotate(360deg)}}
+header h1{font-size:52px;margin-bottom:15px;position:relative;z-index:1;animation:fadeDown 0.8s}
+header p{font-size:20px;position:relative;z-index:1;animation:fadeUp 0.8s}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.top-bar{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:25px;position:relative;z-index:1}
+.btn{padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:bold;transition:0.3s;cursor:pointer;border:none;font-size:16px}
+.btn-fb{background:#1877F2;color:#fff}
+.btn-ig{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff}
+.btn-wa{background:#25D366;color:#fff}
+.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+
+.theme-btn{position:fixed;top:20px;left:20px;z-index:999;background:var(--card);border:2px solid var(--gold);border-radius:50%;width:50px;height:50px;font-size:24px;cursor:pointer}
+
+section{padding:70px 20px;max-width:1300px;margin:auto}
+h2{text-align:center;font-size:38px;margin-bottom:30px;color:var(--gold)}
+
+.search-filter{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.search-filter input{padding:12px 20px;border-radius:30px;border:2px solid var(--gold);width:300px;max-width:90%;font-size:16px;background:var(--card);color:var(--dark)}
+.filter-btns{display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{padding:10px 20px;border-radius:25px;border:2px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;font-weight:bold;transition:0.3s}
+.filter-btn.active,.filter-btn:hover{background:var(--gold);color:#fff}
+
+header{
+  text-align:center;
+  padding:40px 20px 30px;
+  background:linear-gradient(135deg, var(--gold2), var(--gold));
+  border-radius:0 0 40px 40px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.logo{
+  width:90px;          /* صغير */
+  height:90px;         /* مدور */
+  border-radius:50%;   /* دائرة كاملة */
+  border:3px solid #fff;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom:12px;
+  background:#fff;
+  object-fit:contain;
+  padding:6px;
+}
+
+header h1{
+  font-size:36px;
+  margin:8px 0;
+  color:var(--dark);
+}
+
+header p{
+  font-size:17px;
+  margin-bottom:18px;
+  color:var(--dark);
+  opacity:0.9;
+}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:30px}
+.card{background:var(--card);border-radius:25px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.1);transition:0.4s;opacity:0;transform:translateY(30px)}
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 15px 35px rgba(212,163,115,0.3)}
+.card img{width:100%;height:260px;object-fit:cover}
+.card-body{padding:22px;text-align:center}
+.card-body h3{font-size:24px;margin-bottom:8px;color:var(--gold)}
+.price{font-size:22px;font-weight:bold;color:#D62828;margin:12px 0}
+.badge{display:inline-block;background:var(--gold2);color:var(--dark);padding:5px 12px;border-radius:15px;font-size:13px;margin-bottom:10px}
+
+.order{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);text-align:center;border-radius:35px;padding:60px 20px;margin-top:50px;color:#fff}
+.order h3{font-size:32px;margin-bottom:15px}
+
+footer{background:var(--dark);color:var(--bg);text-align:center;padding:25px;margin-top:50px}
+
+@media(max-width:768px){header h1{font-size:36px}.products{grid-template-columns:1fr}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<button class="theme-btn" onclick="toggleTheme()">🌓</button>
+
+<header>
+  <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518038083608645724/1781998627368.jpg?ex=6a3876a2&is=6a372522&hm=a91d039a72d1de5c4d657910dc31a2acd4c88be09d9cf91e933e01069d23279c&" alt="Délîçe Dàdô" class="logo">
+    <h1>🍯 Délîçe Dàdô</h1>
+  <p>ذوق سطيف الأصيل... من القلب للقلب</p>
+  <div class="top-bar">
+    <a href="https://www.facebook.com/profile.php?id=61589929765708&from_xma_click=1" target="_blank" class="btn btn-fb">📘 فايسبوك</a>
+    <a href="https://www.instagram.com/delicedado?igsh=MTJsdXRrcm52OHQ4eQ==" target="_blank" class="btn btn-ig">📷 انستغرام</a>
+  </div>
+</header>
+
+<section>
+  <h2>قائمة الحلويات</h2>
+  
+  <div class="search-filter">
+  <h3>✨ علاش Délîçe Dàdô؟</h3>
+  <p>
+    لدينا جودة عالية في صناعة الحلويات التقليدية والملكية بأيدي جزائرية أصيلة. 
+    <br>نوفرو جميع الكميات التي تريدها للأفراح، المناسبات، الأعراس، الموالد والخطوبة.
+    <br><br>
+    <b>موقعنا: ولاية سطيف، بلدية بني عزيز 🏙️</b>
+    <b>مرحبا بكم للتواصل معنا عبر مواقعنا في التواصل الاجتماعي 👇</b>
+    </div>
+  </div>
+
+  <div class="products" id="products">
+    
+    <!-- 1 -->
+<div class="card" data-cat="تقليدي">
+  <div class="slider">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518023021221118022/1781995164850.jpg?ex=6a38689b&is=6a37171b&hm=005fdc01c6a767a4e2319f6ea33de90b93e4e6914ea25e29da9920ff3ad6f2c2&gg" alt="كروكي بشيكولة">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518028479986401451/1781996547192.jpg?ex=6a386db1&is=6a371c31&hm=6c480a5a1b179e2440b11b4eb08460c1dc24b7679d577a902a7ebcdb048aca88&g" alt="الكروكي">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518028677982453940/1781996536797.jpg?ex=6a386de0&is=6a371c60&hm=75a4794370a8d12969368ec26f131ddaf9dc79cbb8157c709d0a5ab292a8ffd0&g" alt="الكروكي">
+  </div>
+  <div class="card-body">
+    <span class="badge">الأكثر طلباً</span>
+    <h3>الكروكي</h3>
+    <div class="price-box">
+      <div class="price-item">
+        <span>🥜 بالكاوكاو</span>
+        <b>80 ألف دج / كغ</b>
+      </div>
+      <div class="price-item">
+        <span>🍫 بالشيكولاطا</span>
+        <b>120 ألف دج / كغ</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- 2 -->
+<div class="card" data-cat="مرحبا">
+  <div class="multi-img">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518030831690715136/1781997013145.jpg?ex=6a386fe1&is=6a371e61&hm=65772bbd6808f7ad8877b0973f1641d381f9b790110e7a808dfe4b951e24bd01&g" alt="موسكوتشو 1">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518030832068071638/1781997008756.jpg?ex=6a386fe2&is=6a371e62&hm=757bd76bb5c8112efb7b252f5e24ad88c50fd46215e8e09d162cad624e9e86f9&g" alt="موسكوتشو 2">
+  </div>
+  <div class="card-body">
+    <span class="badge">ملكي</span>
+    <h3>موسكوتشو</h3>
+  </div>
+</div>
+
+    <!-- 3 -->
+<div class="card" data-cat="مرحبا">
+  <div class="multi-img">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031737920163922/1781997315370.jpg?ex=6a3870b9&is=6a371f39&hm=b56da8ee59c819318d6c4b281dc1ab31b28baca40cd6a62b0b638e9a7472c454&" alt="موسكوتشو 1">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031755121000548/1781997304422.jpg?ex=6a3870be&is=6a371f3e&hm=e879d978e8dcf9daee274b9cdded41ae7fcbd0eb5482570674203e4bd83d450d&" alt="موسكوتشو 2">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031762658430976/1781997298773.jpg?ex=6a3870bf&is=6a371f3f&hm=5dcc2547ec03efd55a6bafaa63ad3f56a8cdbc94c8eaa723bdb75cfdefd93438&" alt="موسكوتشو 2">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031769943932990/1781997293861.jpg?ex=6a3870c1&is=6a371f41&hm=1e0a90b2f4ec96df41ff5d3ecda01b75f336338b08daad0fe9b47419bb3ceece& alt="موسكوتشو 2">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031780710715422/1781997287346.jpg?ex=6a3870c4&is=6a371f44&hm=aa066e1a48501bacbc14c03b7cced71d21829a3ae2bb1102ea0a723bfd7b0d73&" alt="موسكوتشو 2">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518031804223717416/1781997268850.jpg?ex=6a3870c9&is=6a371f49&hm=5d28d2ee74d3ddab56005bffa3c9ba3a515ef599688ba8b0e407fd817f9e2c67&" alt="موسكوتشو 2">
+  </div>
+  <div class="card-body">
+    <span class="badge">ملكي</span>
+    <h3>مختلف الحلويات التي تم طلبها من قبل</h3>
+  </div>
+</div>
+
+    <!-- 4 -->
+  <div class="card" data-cat="مرحبا">
+  <div class="multi-img">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1518033427360649397/1781997760428.jpg?ex=6a38724c&is=6a3720cc&hm=71285be224646df2b87145d15816fd1bb64501b57faa3334ef8c29f167051e4f&" alt="موسكوتشو 1">
+  </div>
+  <div class="card-body">
+    <span class="badge">ملكي</span>
+    <h3>البنيون</h3>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="order">
+  <h3>طلبات الجملة والمناسبات؟</h3>
+  <p>نخدمو الأعراس، الخطوبة، الموالد... كميات كبيرة بأسعار خاصة</p>
+  <a href="https://www.facebook.com/profile.php?id=61589929765708&from_xma_click=1" target="_blank" class="btn btn-wa">تواصل معنا</a>
+</section>
+
+<footer>
+  <p>© 2026 سميح حلو سطايفي | صنع بحب من سطيف 🇩🇿 | رقم الهاتف: 0XX XX</p>
+</footer>
+
+<script>
+// دارك مود
+function toggleTheme(){
+  document.documentElement.setAttribute('data-theme', 
+    document.documentElement.getAttribute('data-theme')=='dark' ? 'light' : 'dark'
+  );
+}
+
+// أنيميشن ظهور البطاقات
+const cards=document.querySelectorAll('.card');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('show')})
+},{threshold:0.1});
+cards.forEach(card=>observer.observe(card));
+
+// فلتر
+function filterCat(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  cards.forEach(c=>{
+    c.style.display = c.dataset.cat==cat ? 'block' : 'none';
+    if(c.style.display=='block') c.classList.add('show');
+  });
+}
+function filterAll(btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  cards.forEach(c=>{c.style.display='block'; c.classList.add('show')});
+}
+
+// بحث
+document.getElementById('search').addEventListener('input',function(e){
+  let val=e.target.value.toLowerCase();
+  cards.forEach(c=>{
+    let name=c.querySelector('h3').textContent.toLowerCase();
+    c.style.display = name.includes(val) ? 'block' : 'none';
+  });
+});
+</script>
+</body>
+</html>
